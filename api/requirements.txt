@@ -1,0 +1,6 @@
+django>=3.2.23,<4.0.0
+djangorestframework
+pyyaml
+requests
+django-cors-headers
+mysqlclient==2.0.3
