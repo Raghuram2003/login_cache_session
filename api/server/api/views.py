@@ -75,25 +75,25 @@ def login(request):
         }
     return Response(response)
 
-@api_view(['POST'])
-def get_cache(request):
-    if cache.get(request.data['token']):
-        token = request.data['token']
-        decoded = jwt.decode(token,secret,algorithms='HS256')
-        return Response(decoded)
-    else:
-        return Response({"message":"no cache"})
+# @api_view(['POST'])
+# def get_cache(request):
+#     if cache.get(request.data['token']):
+#         token = request.data['token']
+#         decoded = jwt.decode(token,secret,algorithms='HS256')
+#         return Response(decoded)
+#     else:
+#         return Response({"message":"no cache"})
     
-@api_view(['POST'])
-def delete_cache(request):
-    if cache.get(request.data['token']):
-        cache.delete(request.data['token'])
-        return Response({"message":"deleted"})
+# @api_view(['POST'])
+# def delete_cache(request):
+#     if cache.get(request.data['token']):
+#         cache.delete(request.data['token'])
+#         return Response({"message":"deleted"})
     
-@api_view(['GET'])
-def clear_cache(request):
-    cache.clear()
-    return Response({"message":"cache cleared"})
+# @api_view(['GET'])
+# def clear_cache(request):
+#     cache.clear()
+#     return Response({"message":"cache cleared"})
 
 @api_view(['POST'])
 def time_delta(request):
